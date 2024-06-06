@@ -6,8 +6,8 @@ pipeline{
         jdk 'Java17'
         maven 'Maven3'
     }
-    enviroment {
-        APP_Name = "pipeline-demoapplicatie"
+    environment {
+        APP_NAME = "pipeline-demoapplicatie"
         RELEASE = "1.0.0"
         DOCKER_USER = "davidooo"
         DOCKER_PASS = 'dockerhub'
