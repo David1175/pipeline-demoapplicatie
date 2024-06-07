@@ -8,7 +8,7 @@ pipeline{
     }
     environment {
         APP_NAME = "pipeline-demoapplicatie"
-        RELEASE = "1.0.0"
+        RELEASE = "1.0"
         DOCKER_USER = "davidooo"
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
@@ -83,7 +83,7 @@ pipeline{
         stage("Trigger CD Pipeline") {
             steps {
                 script {
-                    sh "curl -v -k --user admin:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'http://192.168.121.129:8080/job/Appdeployment/buildWithParameters?token=deployment-token'"
+                    sh "curl -v -k --user admin:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'http://192.168.121.129:8080/job/appdeployment/buildWithParameters?token=deployment-token'"
                 }
     
             }
